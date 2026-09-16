@@ -1,0 +1,111 @@
+Q67: Insert an element in an array at a given position.
+
+/*
+Sample Test Cases:
+Input 1:
+4
+10 20 30 40
+2 15
+Output 1:
+10 20 15 30 40
+
+*/
+
+
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+
+    int arr[100];
+
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    int position, element;
+    cin >> position >> element;
+
+    // Shift elements to the right
+    for (int i = n; i > position; i--) {
+        arr[i] = arr[i - 1];
+    }
+
+    // Insert element at the given position
+    arr[position] = element;
+    n++;
+
+    // Print the array
+    for (int i = 0; i < n; i++) {
+        cout << arr[i];
+        if (i < n - 1)
+            cout << " ";
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+Q68: Delete an element from an array.
+
+/*
+Sample Test Cases:
+Input 1:
+5
+1 2 3 4 5
+2
+Output 1:
+1 2 4 5
+
+*/
+
+
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    int n, i, position;
+    int arr[100];
+
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    scanf("%d", &position);
+
+    // Shift elements to the left
+    for (i = position; i < n - 1; i++) {
+        arr[i] = arr[i + 1];
+    }
+
+    n--;
+
+    // Print the updated array
+    for (i = 0; i < n; i++) {
+        printf("%d", arr[i]);
+
+        if (i < n - 1)
+            printf(" ");
+    }
+
+    return 0;
+}
